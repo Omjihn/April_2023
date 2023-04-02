@@ -11,8 +11,7 @@ $stdin = fopen("php://stdin", "r");
 
 printf ("Choose rock, paper, or scissors: ");
 
-$input = fgets($stdin);
-
+$input = rtrim(fgets($stdin), "\n");
 
 if (strpos($input, 'rock') !== false)
 {
