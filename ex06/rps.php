@@ -1,6 +1,4 @@
-
 <?php
-
 $max = 1;
 
 $min = 0;
@@ -34,5 +32,4 @@ if (strpos($input, 'scissors') !== false)
 	if ($rand_guess == 1)
 		printf ("Congratulations! You won! The computer chose paper.\n");
 }
-
 ?>
