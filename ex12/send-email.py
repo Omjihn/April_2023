@@ -8,8 +8,8 @@ email_sender = 'april.2023.mail@gmail.com'
 email_password = 'oqajrsfdlidiwgfa'
 email_receiver = 'le.greg09100@gmail.com'
 
-subject = 'Message'
-body = 'Saluent'
+subject = 'Update attachment'
+body = 'Lezgongue ca marche :    )'
 
 em = EmailMessage()
 em['From'] = email_sender
