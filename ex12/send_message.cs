@@ -13,23 +13,24 @@ namespace	SendMail
 		static string emailToAdress = "le.greg01900@gmail.com";
 		static string subject = "test";
 		static string body = "Bonjour bonsoir je suis content que cela fonctionne :)";
-		static void main(void)
+		static void Main(string[] args)
 		{
-			public static void SendEmai()
+			SendEmail();
+		}
+		public static void SendEmail()
+		{
+			using(MailMessage mail = new MailMessage())
 			{
-				using(MailMessage mail = new MailMessage())
+				mail.From = new MailAddress(emailFromAddress);
+				mail.To.Add(emailToAdress);
+				mail.Subject = subject;
+				mail.Body = body;
+				mail.IsBodyHtml = true;
+				using (SmtpClient smtp = new SmtpClient(smtpAdress, portNumber))
 				{
-					mail.From = new MailAddress(emailFromAddress);
-					mail.To.Add(emailToAdress);
-					mail.Subject = subject;
-					mail.Body = body;
-					mail.IsBodyHtml = true;
-					using (SmtpClient smtp = new SmtpClient(smtpAdress, portNumber))
-					{
-						stmp.Credentials = new NetworkCredential(emailFromAddress, password);
-						smtp.EnableSsl = enableSSL;
-						smtp.Send(mail);
-					}
+					smtp.Credentials = new NetworkCredential(emailFromAddress, password);
+					smtp.EnableSsl = enableSSL;
+					smtp.Send(mail);
 				}
 			}
 		}
